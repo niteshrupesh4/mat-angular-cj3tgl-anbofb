@@ -1,0 +1,48 @@
+<mat-card>
+	<mat-card-content>
+		<mat-card-title>Forms basic</mat-card-title>
+		<form [formGroup]="setForm">
+			<mat-form-field appearance="legacy">
+				<input matInput formControlName="newPassword" placeholder="New Password">
+			</mat-form-field>
+				<div *ngIf="f.newPassword.errors" class="error-text">
+					<span *ngIf="f.newPassword.errors['required']">
+        Password is required
+        </span>
+				</div>
+				<mat-form-field appearance="legacy">
+					<input matInput formControlName="confirmPassword" placeholder="New Password">
+			</mat-form-field>
+					<div *ngIf="f.confirmPassword.errors" class="error-text">
+						<span *ngIf="f.confirmPassword.errors['required']">
+        Password is required
+        </span>
+						<span *ngIf="f.confirmPassword.errors['mustMatch']">
+          Confirm password does not match with new password
+           </span>
+					</div>
+					<mat-form-field appearance="legacy">
+						<input matInput formControlName="email" placeholder="email">
+			</mat-form-field>
+						<div *ngIf="f.email.errors" class="error-text">
+							<span *ngIf="f.email.errors['required']">
+        email is required
+        </span>
+						</div>
+						<mat-form-field appearance="legacy">
+							<input matInput formControlName="confirmEmail" placeholder="New Password">
+			</mat-form-field>
+							<div *ngIf="f.confirmEmail.errors" class="error-text">
+								<span *ngIf="f.confirmEmail.errors['required']">
+        confirmEmail is required
+        </span>
+								<span *ngIf="em">
+          Confirm MustMatch email does not match with email
+          </span>
+							</div>
+							<div class="text-center">
+								<button type="button" (click)="onSubmit()" class="btn btn-green">Update</button>
+							</div>
+		</form>
+	</mat-card-content>
+</mat-card>

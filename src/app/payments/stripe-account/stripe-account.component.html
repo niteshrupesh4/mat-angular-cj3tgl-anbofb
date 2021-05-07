@@ -1,0 +1,78 @@
+<mat-card>
+	<mat-card-content>
+		<mat-card-title>Stipe Account</mat-card-title>
+		<div class="body">
+			<div id="main">
+				<div id="checkout">
+					<div id="payment-form">
+						<form [formGroup]="accountForm" id="account-form">
+							<fieldset>
+								<label>
+                <span>First Name</span>
+                <input type="text" name="name" formControlName="fname" id="name" class="field">
+              </label>
+								<label>
+                <span>Last Name</span>
+                <input type="text" name="lname" formControlName="lname" id="lname" class="field">
+              </label>
+              	<label>
+                <span>Email</span>
+                <input type="text" name="email" formControlName="email" id="email" class="field">
+              </label>
+								<label>
+                <span>URL</span>
+                <input type="text" name="url" id="url" formControlName="url" class="field">
+              </label>
+								<label>
+                <span>Merchant category code</span>
+                <input type="text" name="mcc" id="mcc" formControlName="mcc" class="field">
+              </label>
+								<label>
+                <span>Phone</span>
+                <input type="text" name="phone" formControlName="phone" class="field">
+              </label>
+							</fieldset>
+
+							<fieldset>
+								<label>
+                <span>Address line1</span>
+                <input type="text" name="line1" id="line1" class="field" formControlName="line1">
+              </label>
+              	<label>
+                <span>Address line2</span>
+                <input type="text" name="line2" id="line2" class="field" formControlName="line2">
+              </label>
+								<label>
+                <span>City</span>
+                <input type="text" name="city" id="city" class="field" formControlName="city">
+              </label>
+								<label>
+                <span>State</span>
+                <input type="text" name="state" id="state" class="field" formControlName="state">
+              </label>
+								<label>
+                <span>Postal Code</span>
+                <input type="text" name="postal_code" id="postal_code" class="field" formControlName="postal_code">
+              </label>
+							</fieldset>
+
+							<fieldset>
+								<label>
+                <span>Account Number</span>
+                <input type="text" name="account_number" id="account_number" formControlName="account_number"class="field">
+              </label>
+								<label>
+                <span>Routing Number</span>
+                <input type="text" name="routing_number" id="routing_number" formControlName="routing_number" class="field">
+              </label>
+							</fieldset>
+
+							<button id="account-button" (click)="createBankAccount()">Submit</button>
+						</form>
+					</div>
+					<div id="debug-message"></div>
+				</div>
+			</div>
+		</div>
+	</mat-card-content>
+</mat-card>
